@@ -114,7 +114,7 @@ const searchCity = (city) => {
       .then((data)=> {
         console.log(data);
         placeValue(data);
-        let forecastApi =  `https://api.openweathermap.org/data/2.5/forcast?q=${city}&appId=${key}&units=metric &cnt=4`;
+        let forecastApi =  `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appId=${key}&units=metric &cnt=4`;
         fetch(forecastApi)
           .then((response) =>{
               //console.log(response);
