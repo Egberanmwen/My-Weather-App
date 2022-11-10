@@ -97,7 +97,7 @@ const currentLocation = (e) =>{
     navigator.geolocation.getCurrentPosition((position)=> {
       let long = position.coords.longitude;
       let lat = position.coords.latitude;  
-      const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric &cnt=4`;
+      const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=metric`;
       fetch(url).then(response =>{
         return  response.json();
       }).then(placeValue)
@@ -114,7 +114,7 @@ const searchCity = (city) => {
       .then((data)=> {
         console.log(data);
         placeValue(data);
-        let forecastApi =  `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appId=${key}&units=metric &cnt=4`;
+        let forecastApi =  `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=4&appId=${key}&units=metric &cnt=4`;
         fetch(forecastApi)
           .then((response) =>{
               //console.log(response);
